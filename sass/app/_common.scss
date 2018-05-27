@@ -1,0 +1,17 @@
+#app {
+    max-width: $container-width;
+    margin: $indent-base auto;
+}
+
+#create-html-button {
+    margin-top: $indent-small;
+}
+
+#generated-html-textarea {
+    margin-bottom: $indent-base;
+}
+
+#preview-area {
+    min-height: 400px;
+    width: 100%;
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script data-main="js/app" src="js/vendor/require.js"></script>
+    <script src="js/requirejs-config.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="header">
+        <h1 class="float-left">Quick Markup</h1>
+        <button id="create-html-button" class="float-right btn btn-primary" v-on:click="createHTML">Create HTML</button>
+    </div>
+    <form>
+        <textarea title="input-markup" rows="10" style="width: 100%;" v-model="inputText" v-on:change="createHTML"></textarea>
+        Is Two Columns:
+        <label for="two_columns_yes">Yes</label>
+        <input id="two_columns_yes" type="radio" value="1" name="is_two_columns" v-model="isTwoColumn" v-on:change="createHTML">
+        <label for="two_columns_no">No</label>
+        <input type="radio" value="0" id="two_columns_no" name="is_two_columns" v-model="isTwoColumn" v-on:change="createHTML">
+        <br>
+        Include placeholder comments for images:
+        <label for="include_image_placeholders_yes">Yes</label>
+        <input id="include_image_placeholders_yes" type="radio" value="1" name="include_image_placeholders" v-model="includeImgHolders" v-on:change="createHTML">
+        <label for="include_image_placeholders_no">No</label>
+        <input type="radio" value="0" id="include_image_placeholders_no" name="include_image_placeholders" v-model="includeImgHolders" v-on:change="createHTML">
+        <hr>
+        <h4>Generated HTML</h4>
+        <textarea title="output-html" id="generated-html-textarea" rows="10" style="width: 100%;" v-model="outputHTML"  ></textarea>
+        <h4>Preview</h4>
+        <div v-html="outputHTML" id="preview-area"></div>
+    </form>
+</div>
+</body>
+</html>
